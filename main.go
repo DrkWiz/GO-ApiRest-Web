@@ -1,17 +1,20 @@
-// obtencion de datos de la api de mercado libre y renderizado de html
+// obtención de datos de la API de Chuck Norris y renderizado de html
 package main
 
 import (
 	"log"
 	"net/http"
 
-	"github.com/DrkWiz/GO-ApiRest-Web/internal/handlers"
+	"go-apirest-web/internal/handlers"
 )
 
 func main() {
 	//dedinir rutas
 	http.HandleFunc("/", handlers.Home)
-	http.HandleFunc("/api/productos", handlers.GetProductos)
+	http.HandleFunc("/api/random", handlers.GetChistesRandom)
+	http.HandleFunc("/api/categoria", handlers.GetCategoria)
+	http.HandleFunc("/api/categoria/", handlers.GetChistesCategoria)
+	http.HandleFunc("/api/search", handlers.GetChistesPalabra)
 
 	//iniciar servidor
 	log.Println("Servidor iniciado en http://localhost:8080")
